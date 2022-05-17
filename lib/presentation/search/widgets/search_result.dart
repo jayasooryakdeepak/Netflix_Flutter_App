@@ -24,7 +24,7 @@ class SearchResultWidget extends StatelessWidget {
             children: List.generate(
               20,
               (index) {
-              return const MainCard();
+              return const SearchCard();
             }
           ),
         )
@@ -34,8 +34,8 @@ class SearchResultWidget extends StatelessWidget {
   }
 }
 
-class MainCard extends StatelessWidget {
-  const MainCard({ Key? key }) : super(key: key);
+class SearchCard extends StatelessWidget {
+  const SearchCard({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
