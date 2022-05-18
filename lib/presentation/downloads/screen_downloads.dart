@@ -60,7 +60,7 @@ class Section2 extends StatelessWidget {
               fontWeight: FontWeight.bold,
               ),
             ),
-          KHeight,
+          kHeight,
           const Text(
             "We'll download a personalised selection of \n movies and shows for you, so there's \n always something to watch on you \ndevice",
             textAlign: TextAlign.center,
@@ -135,7 +135,7 @@ class Section3 extends StatelessWidget {
               ),
             ),
         ),
-        KHeight,
+        kHeight,
           SizedBox(
             width: 290,
             child: MaterialButton(
@@ -170,11 +170,11 @@ class _SmartDownloads extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: const[
-      KWidth,
+      kWidth,
       Icon(Icons.settings,
       color: KWhiteColor,
       ),
-      KWidth,
+      kWidth,
       Text("Smart Downloads",
       style: TextStyle(
         fontWeight: FontWeight.bold

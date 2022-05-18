@@ -23,13 +23,13 @@ class AppBarWidget extends StatelessWidget {
         color: Colors.white,
         size: 30,
         ),
-        KWidth,
+        kWidth,
         Container(
           width: 30,
           height: 30,
           color: Colors.blue,
         ),
-        KWidth
+        kWidth
       ],
     );
   }

@@ -19,7 +19,7 @@ class MainTitleCard extends StatelessWidget {
         MainTitle(
           title: title,
         ),
-        KHeight,
+        kHeight,
         LimitedBox(
           maxHeight: 200,
           child: ListView(

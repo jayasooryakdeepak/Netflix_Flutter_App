@@ -14,7 +14,7 @@ class MainCard extends StatelessWidget {
       width: 130,
       height: 250,
       decoration: BoxDecoration(
-        borderRadius: KRadius10,
+        borderRadius: kRadius10,
         image: const DecorationImage(
           fit: BoxFit.cover,
           image: NetworkImage(
