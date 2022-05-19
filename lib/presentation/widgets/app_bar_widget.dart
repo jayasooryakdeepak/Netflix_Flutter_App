@@ -3,8 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_app/core/constants.dart';
 
 class AppBarWidget extends StatelessWidget {
-  const AppBarWidget({ Key? key,
-  required this.title,
+  const AppBarWidget({
+    Key? key,
+    required this.title,
   }) : super(key: key);
   final String title;
 
@@ -14,14 +15,14 @@ class AppBarWidget extends StatelessWidget {
       children: [
         Text(
           title,
-        style: GoogleFonts.montserrat(
-          fontSize: 30,
-          fontWeight: FontWeight.bold
-        ),),
+          style:
+              GoogleFonts.montserrat(fontSize: 30, fontWeight: FontWeight.bold),
+        ),
         const Spacer(),
-        const Icon(Icons.cast,
-        color: Colors.white,
-        size: 30,
+        const Icon(
+          Icons.cast,
+          color: Colors.white,
+          size: 30,
         ),
         kWidth,
         Container(
