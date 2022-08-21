@@ -64,35 +64,39 @@ class Section2 extends StatelessWidget {
         ),
         BlocBuilder<DownloadsBloc, DownloadsState>(
           builder: (context, state) {
-            return 
-            SizedBox(
+            return SizedBox(
               width: size.width,
               height: size.width,
               child: Center(
-                child: state.isLoading ? const CircularProgressIndicator(): Stack(alignment: Alignment.center, children: [
-                  CircleAvatar(
-                    radius: size.width * 0.37,
-                    backgroundColor: Colors.grey.withOpacity(0.5),
-                  ),
-                  DownloadImageWidget(
-                    imageList: '$imageAppendUrl${state.downloads![0].posterPath}',
-                    margin: EdgeInsets.only(left: 170, top: 60),
-                    angle: 25,
-                    size: Size(size.width * 0.35, size.width * 0.55),
-                  ),
-                  DownloadImageWidget(
-                    imageList: '$imageAppendUrl${state.downloads![1].posterPath}',
-                    margin: EdgeInsets.only(right: 170, top: 60),
-                    angle: -25,
-                    size: Size(size.width * 0.35, size.width * 0.55),
-                  ),
-                  DownloadImageWidget(
-                    imageList: '$imageAppendUrl${state.downloads![2].posterPath}',
-                    radius: 20,
-                    margin: EdgeInsets.only(top: 20),
-                    size: Size(size.width * 0.40, size.width * 0.60),
-                  ),
-                ]),
+                child: state.isLoading
+                    ? const CircularProgressIndicator()
+                    : Stack(alignment: Alignment.center, children: [
+                        CircleAvatar(
+                          radius: size.width * 0.37,
+                          backgroundColor: Colors.grey.withOpacity(0.5),
+                        ),
+                        DownloadImageWidget(
+                          imageList:
+                              '$imageAppendUrl${state.downloads![0].posterPath}',
+                          margin: EdgeInsets.only(left: 170, top: 60),
+                          angle: 25,
+                          size: Size(size.width * 0.35, size.width * 0.55),
+                        ),
+                        DownloadImageWidget(
+                          imageList:
+                              '$imageAppendUrl${state.downloads![1].posterPath}',
+                          margin: EdgeInsets.only(right: 170, top: 60),
+                          angle: -25,
+                          size: Size(size.width * 0.35, size.width * 0.55),
+                        ),
+                        DownloadImageWidget(
+                          imageList:
+                              '$imageAppendUrl${state.downloads![2].posterPath}',
+                          radius: 20,
+                          margin: EdgeInsets.only(top: 20),
+                          size: Size(size.width * 0.40, size.width * 0.60),
+                        ),
+                      ]),
               ),
             );
           },

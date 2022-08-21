@@ -40,10 +40,9 @@ class NumberCard extends StatelessWidget {
               child: Text(
                 "${index + 1}",
                 style: const TextStyle(
-                  fontSize: 140,
-                  decoration: TextDecoration.none,
-                  color: KBlackColor
-                ),
+                    fontSize: 140,
+                    decoration: TextDecoration.none,
+                    color: KBlackColor),
               ),
             ))
       ],

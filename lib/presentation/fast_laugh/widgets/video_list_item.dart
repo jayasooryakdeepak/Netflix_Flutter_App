@@ -42,17 +42,14 @@ class VideoListItem extends StatelessWidget {
                       child: CircleAvatar(
                         radius: 30,
                         backgroundImage: NetworkImage(
-                          'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/evsWMsxq8xZbCDFWwjN6ZX8e3Fw.jpg'),
+                            'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/evsWMsxq8xZbCDFWwjN6ZX8e3Fw.jpg'),
                       ),
                     ),
                     VideoActionsWidget(
                         icon: Icons.emoji_emotions, title: 'LOL'),
-                    VideoActionsWidget(
-                        icon: Icons.add, title: 'My List'),
-                    VideoActionsWidget(
-                      icon: Icons.share ,title: 'Share'),
-                    VideoActionsWidget(
-                      icon: Icons.play_arrow, title: 'Play'),
+                    VideoActionsWidget(icon: Icons.add, title: 'My List'),
+                    VideoActionsWidget(icon: Icons.share, title: 'Share'),
+                    VideoActionsWidget(icon: Icons.play_arrow, title: 'Play'),
                   ],
                 )
               ],
@@ -74,20 +71,17 @@ class VideoActionsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: Column(
         children: [
           Icon(
             icon,
             color: KWhiteColor,
             size: 30,
-            ),
+          ),
           Text(
             title,
-            style: const TextStyle(
-              color: KWhiteColor,
-              fontSize: 14        
-            ),
+            style: const TextStyle(color: KWhiteColor, fontSize: 14),
           ),
         ],
       ),

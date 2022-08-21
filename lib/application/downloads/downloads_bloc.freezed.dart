@@ -184,7 +184,7 @@ class _$DownloadsStateTearOff {
 
   _DownloadsState call(
       {required bool isLoading,
-      List<Downloads>? downloads,
+      required List<Downloads>? downloads,
       required Option<Either<MainFailure, List<Downloads>>>
           downloadsFailureOrSuccessOption}) {
     return _DownloadsState(
@@ -309,7 +309,7 @@ class __$DownloadsStateCopyWithImpl<$Res>
 class _$_DownloadsState implements _DownloadsState {
   const _$_DownloadsState(
       {required this.isLoading,
-      this.downloads,
+      required this.downloads,
       required this.downloadsFailureOrSuccessOption});
 
   @override
@@ -353,7 +353,7 @@ class _$_DownloadsState implements _DownloadsState {
 abstract class _DownloadsState implements DownloadsState {
   const factory _DownloadsState(
       {required bool isLoading,
-      List<Downloads>? downloads,
+      required List<Downloads>? downloads,
       required Option<Either<MainFailure, List<Downloads>>>
           downloadsFailureOrSuccessOption}) = _$_DownloadsState;
 

@@ -4,8 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class SearchTextTitle extends StatelessWidget {
   final String title;
 
-  const SearchTextTitle({
-    Key? key, required this.title}) : super(key: key);
+  const SearchTextTitle({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
