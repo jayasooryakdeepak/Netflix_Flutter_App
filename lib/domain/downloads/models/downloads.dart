@@ -10,6 +10,9 @@ class Downloads with _$Downloads {
 
     @JsonKey(name: "title") 
     required String? title,
+    
+    @JsonKey(name: "name") 
+    required String? name,
   }) = _Downloads;
 
 

@@ -6,7 +6,6 @@ import 'package:netflix_app/domain/core/failures/main_failure.dart';
 import 'package:netflix_app/domain/downloads/i_downloads_repo.dart';
 
 import '../../domain/downloads/models/downloads.dart';
-import '../../domain/downloads/models/downloads.dart';
 
 part 'downloads_event.dart';
 part 'downloads_state.dart';

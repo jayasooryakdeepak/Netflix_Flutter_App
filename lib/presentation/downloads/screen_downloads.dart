@@ -10,7 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ScreenDownloads extends StatelessWidget {
   ScreenDownloads({Key? key}) : super(key: key);
 
-  final _widgetList = [const _SmartDownloads(), Section2(), const Section3()];
+  final _widgetList = [const _SmartDownloads(), const Section2(), const Section3()];
 
   @override
   Widget build(BuildContext context) {
@@ -25,23 +25,23 @@ class ScreenDownloads extends StatelessWidget {
             ),
           )),
       body: ListView.separated(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           itemBuilder: (ctx, index) => _widgetList[index],
-          separatorBuilder: (ctx, index) => SizedBox(height: 25),
+          separatorBuilder: (ctx, index) => const SizedBox(height: 25),
           itemCount: _widgetList.length),
     );
   }
 }
 
 class Section2 extends StatelessWidget {
-  Section2({Key? key}) : super(key: key);
+  const Section2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {});
+    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {});
     final Size size = MediaQuery.of(context).size;
     BlocProvider.of<DownloadsBloc>(context)
-        .add(DownloadsEvent.getDownloadsImage());
+        .add(const DownloadsEvent.getDownloadsImage());
     return Column(
       children: [
         const Text(
@@ -78,14 +78,14 @@ class Section2 extends StatelessWidget {
                         DownloadImageWidget(
                           imageList:
                               '$imageAppendUrl${state.downloads![0].posterPath}',
-                          margin: EdgeInsets.only(left: 170, top: 60),
+                          margin: const EdgeInsets.only(left: 170, top: 60),
                           angle: 25,
                           size: Size(size.width * 0.35, size.width * 0.55),
                         ),
                         DownloadImageWidget(
                           imageList:
                               '$imageAppendUrl${state.downloads![1].posterPath}',
-                          margin: EdgeInsets.only(right: 170, top: 60),
+                          margin: const EdgeInsets.only(right: 170, top: 60),
                           angle: -25,
                           size: Size(size.width * 0.35, size.width * 0.55),
                         ),
@@ -93,7 +93,7 @@ class Section2 extends StatelessWidget {
                           imageList:
                               '$imageAppendUrl${state.downloads![2].posterPath}',
                           radius: 20,
-                          margin: EdgeInsets.only(top: 20),
+                          margin: const EdgeInsets.only(top: 20),
                           size: Size(size.width * 0.40, size.width * 0.60),
                         ),
                       ]),
@@ -209,11 +209,13 @@ class DownloadImageWidget extends StatelessWidget {
             width: size.width,
             height: size.height,
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                      imageList,
-                    ))),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                  imageList,
+                ),
+              ),
+            ),
           ),
         ),
       ),
