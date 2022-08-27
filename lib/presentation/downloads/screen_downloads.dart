@@ -10,20 +10,25 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ScreenDownloads extends StatelessWidget {
   ScreenDownloads({Key? key}) : super(key: key);
 
-  final _widgetList = [const _SmartDownloads(), const Section2(), const Section3()];
+  final _widgetList = [
+    const _SmartDownloads(),
+    const Section2(),
+    const Section3()
+  ];
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(50),
-          child: Padding(
-            padding: EdgeInsets.only(left: 20, top: 7),
-            child: AppBarWidget(
-              title: "Downloads",
-            ),
-          )),
+        preferredSize: Size.fromHeight(50),
+        child: Padding(
+          padding: EdgeInsets.only(left: 20, top: 7),
+          child: AppBarWidget(
+            title: "Downloads",
+          ),
+        ),
+      ),
       body: ListView.separated(
           padding: const EdgeInsets.all(10),
           itemBuilder: (ctx, index) => _widgetList[index],
@@ -38,10 +43,14 @@ class Section2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {});
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      BlocProvider.of<DownloadsBloc>(context).add(const DownloadsEvent.getDownloadsImage());
+    });
     final Size size = MediaQuery.of(context).size;
-    BlocProvider.of<DownloadsBloc>(context)
-        .add(const DownloadsEvent.getDownloadsImage());
+    
+    //BlocProvider.of<DownloadsBloc>(context)
+      //  .add(const DownloadsEvent.getDownloadsImage());
+    
     return Column(
       children: [
         const Text(
@@ -68,7 +77,7 @@ class Section2 extends StatelessWidget {
               width: size.width,
               height: size.width,
               child: Center(
-                child: state.isLoading
+                child: state.isLoading 
                     ? const CircularProgressIndicator()
                     : Stack(alignment: Alignment.center, children: [
                         CircleAvatar(
@@ -77,7 +86,7 @@ class Section2 extends StatelessWidget {
                         ),
                         DownloadImageWidget(
                           imageList:
-                              '$imageAppendUrl${state.downloads![0].posterPath}',
+                              '$imageAppendUrl${state.downloads![2].posterPath}',
                           margin: const EdgeInsets.only(left: 170, top: 60),
                           angle: 25,
                           size: Size(size.width * 0.35, size.width * 0.55),
@@ -91,7 +100,7 @@ class Section2 extends StatelessWidget {
                         ),
                         DownloadImageWidget(
                           imageList:
-                              '$imageAppendUrl${state.downloads![2].posterPath}',
+                              '$imageAppendUrl${state.downloads![0].posterPath}',
                           radius: 20,
                           margin: const EdgeInsets.only(top: 20),
                           size: Size(size.width * 0.40, size.width * 0.60),

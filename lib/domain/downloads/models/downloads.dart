@@ -8,6 +8,9 @@ class Downloads with _$Downloads {
     @JsonKey(name: "poster_path") 
     required String? posterPath,
 
+    @JsonKey(name: "backdrop_path") 
+    required String? backdrop_path,
+
     @JsonKey(name: "title") 
     required String? title,
     

@@ -23,8 +23,6 @@ class SearchResp {
 @JsonSerializable()
 class SearchResultData {
   
-  @JsonKey(name: 'id')
-  int? id;
 
   @JsonKey(name: 'original_title')
   String? original_name;
@@ -37,7 +35,6 @@ class SearchResultData {
 
   SearchResultData({
 
-    this.id,
     this.original_name,
     this.posterPath,
   });
